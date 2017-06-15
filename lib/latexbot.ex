@@ -46,7 +46,6 @@ defmodule LatexBot do
     show = fn x -> show x, state[:rest_client], payload[:data]["channel_id"] end
     message = payload
       |> DiscordEx.Client.Helpers.MessageHelper.msg_command_parse("#{client}")
-      |> (fn {x,y} -> {String.trim(x), y} end).()
     case message do
       {"help", _} -> show.(:help)
       {"source", _} -> show.(:source)
