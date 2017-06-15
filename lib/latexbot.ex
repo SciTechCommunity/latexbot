@@ -50,6 +50,7 @@ defmodule LatexBot do
       {"help", _} -> show.(:help)
       {"source", _} -> show.(:source)
       {"author", _} -> show.(:author)
+      {nil, msg} -> msg
       {_unknown, _command} -> show.(:help)
     end |> IO.inspect
     {:ok, state}
